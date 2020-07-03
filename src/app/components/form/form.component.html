@@ -1,0 +1,8 @@
+<form class="form-container" [formGroup]="checkoutForm">
+    <div class="form-group d-flex flex-column-reverse col-6 position-relative">
+        
+        <label class="font-paragraph-gray">Prueba</label>
+        <input [ngClass]="{'error-input': checkoutForm.get('name').invalid }" type="text" class="form-control general-input-format" formControlName="name">
+        <span *ngIf="checkoutForm.get('name').touched && !checkoutForm.get('name').value || checkoutForm.get('name').invalid" class="error-message-forms">Error</span>  
+      </div>
+</form>
