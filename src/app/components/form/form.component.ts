@@ -24,4 +24,8 @@ export class FormComponent implements OnInit {
     });
   }
 
+  submit(value){
+    console.log(value)
+  }
+
 }
