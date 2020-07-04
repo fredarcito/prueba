@@ -1,11 +1,9 @@
-.form-container
-    display: flex
-    justify-content: center
 
 form
-    width: 70%
+    width: 60%
+    margin-top: 2rem
 
-input
+input, textarea
     border: 1px solid #ccc
     border-radius: .2rem
     padding: .5rem
@@ -13,6 +11,28 @@ input
     &:focus
         border: 1px solid green !important
         outline: none
+
+label
+    font-weight: 300
+
+button
+    padding: .5rem
+    background: #3949AB
+    color: #fff
+    outline: none
+    border: none
+    border-radius: 3px
+    cursor: pointer
+    &:hover
+        background: #303F9F
+
+span
+    color: red
+    font-size: .8rem
+
+.form-container
+    display: flex
+    justify-content: center
 
 .d-flex
     display: flex

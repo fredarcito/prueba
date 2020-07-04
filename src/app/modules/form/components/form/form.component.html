@@ -1,0 +1,50 @@
+<section class="form-container">
+<form [formGroup]="checkoutForm" (ngSubmit)="submit(checkoutForm)">
+  <div class="row">
+
+    <div class="col-12">
+      <label class="font-paragraph-gray">Name:</label>
+      <div>
+        <input [ngClass]="{'error-input': checkoutForm.get('name').touched && checkoutForm.get('name').invalid || checkoutForm.get('name').invalid && showErrors }" type="text" class="form-control general-input-format" formControlName="name">
+      </div>
+      <span *ngIf="checkoutForm.get('name').touched && checkoutForm.get('name').invalid" class="error-message-forms">Error</span>  
+    </div>
+
+  </div>
+
+    <div class="row d-flex">
+      <div class="col-6">
+        <label class="font-paragraph-gray">Address: </label>
+        <div>
+          <input [ngClass]="{'error-input': checkoutForm.get('address').touched && checkoutForm.get('address').invalid }" type="text" class="form-control general-input-format" formControlName="address">
+        </div>
+        <span *ngIf="checkoutForm.get('address').touched && checkoutForm.get('address').invalid" class="error-message-forms">Error</span>  
+      </div>
+
+      <div class="col-6">
+          <label class="font-paragraph-gray">Phone:</label>
+          <div>
+            <input [ngClass]="{'error-input': checkoutForm.get('phone').touched && checkoutForm.get('phone').invalid }" type="text" class="form-control general-input-format" formControlName="phone">
+          </div>
+          <span *ngIf="checkoutForm.get('phone').touched && checkoutForm.get('phone').invalid" class="error-message-forms">Error</span>  
+      </div>
+
+    </div>
+      <div class="row">
+      <div class="col-12">
+
+          <label class="font-paragraph-gray">Prueba</label>
+          <div>
+            <textarea rows="6" [ngClass]="{'error-input': checkoutForm.get('description').touched && checkoutForm.get('description').invalid }"  class="form-control general-input-format" formControlName="description"></textarea>
+          </div>
+          <span *ngIf="checkoutForm.get('description').touched && checkoutForm.get('description').invalid" class="error-message-forms">Error</span>  
+
+      </div>
+    </div>  
+
+    <div>
+      <button  type="submit">Submit</button>
+    </div>
+
+</form>
+</section>

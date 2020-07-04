@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormServiceService } from '../../services/form-service.service'
 
 @Component({
   selector: 'app-form',
@@ -10,8 +11,9 @@ export class FormComponent implements OnInit {
 
 
   checkoutForm;
+  showErrors = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private formServiceService: FormServiceService) { }
 
   ngOnInit() {
     this.getForm();
@@ -20,11 +22,16 @@ export class FormComponent implements OnInit {
   getForm(){
     this.checkoutForm = this.formBuilder.group({
       name:  ['', Validators.required],
-      address: ''
+      address:  ['', Validators.required],
+      phone:  ['', Validators.required],
+      description:  ['', Validators.required],
+      email: ['', Validators.email]
+      
     });
   }
 
   submit(value){
+    this.showErrors = true;
     console.log(value)
   }
 
